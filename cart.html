@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shopping cart — ShopNest demo store.">
+  <title>Shopping Cart — ShopNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ShopNest home">
+        <img class="brand-logo" src="https://placehold.co/48x48?text=SN" alt="ShopNest logo" width="48" height="48">
+        <span class="brand-name">ShopNest</span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+        Open menu
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#featured-products">Continue Shopping</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-login" href="login.html">Login</a>
+        <a class="btn btn-cart" href="cart.html" aria-current="page">
+          Cart
+          <span class="cart-count" id="cart-item-count" aria-live="polite">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="cart-page" aria-labelledby="cart-heading">
+      <h1 id="cart-heading">Shopping Cart</h1>
+      <p class="section-note">Demo cart only. Browser prices and stock are not trustworthy for real orders.</p>
+
+      <div class="cart-empty" id="cart-empty" hidden>
+        <p>Your cart is empty. <a href="index.html#featured-products">Continue shopping</a> to add demo products.</p>
+      </div>
+
+      <!-- Cart table: script.js rebuilds tbody#cart-body -->
+      <div class="cart-table-wrapper" id="cart-table-wrapper">
+        <table class="cart-table">
+          <caption class="visually-hidden">Items in your cart</caption>
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Unit price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Line total</th>
+              <th scope="col">Remove</th>
+            </tr>
+          </thead>
+          <tbody id="cart-body"></tbody>
+        </table>
+      </div>
+
+      <aside class="cart-summary" aria-labelledby="cart-summary-heading">
+        <h2 id="cart-summary-heading">Order Summary</h2>
+        <dl class="summary-list">
+          <div>
+            <dt>Subtotal</dt>
+            <dd id="cart-subtotal">₹1,198</dd>
+          </div>
+          <div>
+            <dt>Delivery charge</dt>
+            <dd id="cart-delivery">₹49</dd>
+          </div>
+          <div class="summary-total">
+            <dt>Final total</dt>
+            <dd id="cart-final-total">₹1,247</dd>
+          </div>
+        </dl>
+
+        <div class="cart-actions">
+          <a class="btn" href="index.html#featured-products">Continue Shopping</a>
+          <a class="btn btn-primary" href="checkout.html">Proceed to Checkout</a>
+        </div>
+      </aside>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="copyright"><small>&copy; 2026 ShopNest. Demo site.</small></p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

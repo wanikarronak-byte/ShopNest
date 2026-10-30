@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopNest — online shopping for mobile accessories, home and kitchen, fashion, sarees, and car accessories.">
+  <title>ShopNest — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER: logo, navigation, search, account actions ========== -->
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ShopNest home">
+        <img class="brand-logo" src="https://placehold.co/48x48?text=SN" alt="ShopNest logo" width="48" height="48">
+        <span class="brand-name">ShopNest</span>
+      </a>
+
+      <!-- Primary navigation (desktop); mobile menu toggle targets #main-nav -->
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+        Open menu
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <span class="nav-label" id="categories-menu-label">All Categories</span>
+            <ul class="category-menu" aria-labelledby="categories-menu-label">
+              <li><a href="index.html#featured-products" data-category="all">All Products</a></li>
+              <li><a href="index.html#featured-products" data-category="mobile">Mobile Accessories</a></li>
+              <li><a href="index.html#featured-products" data-category="home-kitchen">Home and Kitchen</a></li>
+              <li><a href="index.html#featured-products" data-category="fashion">Fashion Accessories</a></li>
+              <li><a href="index.html#featured-products" data-category="sarees">Sarees and Clothing</a></li>
+              <li><a href="index.html#featured-products" data-category="car">Car Accessories</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#featured-products">Featured Products</a></li>
+          <li><a href="index.html#new-arrivals">New Arrivals</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-form" role="search" aria-label="Search products" action="index.html" method="get">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input type="search" id="site-search" name="q" placeholder="Search products…" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="header-actions">
+        <a class="btn btn-login" href="login.html" id="header-login-link">Login</a>
+        <a class="btn" href="seller.html">Seller</a>
+        <a class="btn btn-wishlist" href="index.html#wishlist-section" aria-label="View wishlist">Wishlist</a>
+        <a class="btn btn-cart" href="cart.html" aria-label="Shopping cart">
+          Cart
+          <span class="cart-count" id="cart-item-count" aria-live="polite">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ========== HERO: promotion and primary call to action ========== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <h1 id="hero-heading">Welcome to ShopNest</h1>
+        <p>
+          Discover demo deals across mobile gear, home essentials, fashion, traditional wear, and car accessories —
+          all in one nest for your shopping.
+        </p>
+        <a class="btn btn-primary" href="#categories">Shop Now</a>
+      </div>
+      <figure class="hero-banner">
+        <img src="https://placehold.co/800x400?text=ShopNest+Banner" alt="Promotional banner placeholder for ShopNest" width="800" height="400">
+      </figure>
+    </section>
+
+    <!-- ========== CATEGORIES: five category cards ========== -->
+    <section class="categories" id="categories" aria-labelledby="categories-heading">
+      <h2 id="categories-heading">Shop by Category</h2>
+      <div class="category-grid">
+
+        <article class="category-card" id="category-mobile">
+          <img src="https://placehold.co/320x200?text=Mobile+Accessories" alt="" width="320" height="200">
+          <h3>Mobile Accessories</h3>
+          <a class="btn" href="index.html#featured-products" data-category="mobile">Shop Now</a>
+        </article>
+
+        <article class="category-card" id="category-home-kitchen">
+          <img src="https://placehold.co/320x200?text=Home+and+Kitchen" alt="" width="320" height="200">
+          <h3>Home and Kitchen</h3>
+          <a class="btn" href="index.html#featured-products" data-category="home-kitchen">Shop Now</a>
+        </article>
+
+        <article class="category-card" id="category-fashion">
+          <img src="https://placehold.co/320x200?text=Fashion+Accessories" alt="" width="320" height="200">
+          <h3>Fashion Accessories</h3>
+          <a class="btn" href="index.html#featured-products" data-category="fashion">Shop Now</a>
+        </article>
+
+        <article class="category-card" id="category-sarees">
+          <img src="https://placehold.co/320x200?text=Sarees+and+Clothing" alt="" width="320" height="200">
+          <h3>Sarees and Clothing</h3>
+          <a class="btn" href="index.html#featured-products" data-category="sarees">Shop Now</a>
+        </article>
+
+        <article class="category-card" id="category-car">
+          <img src="https://placehold.co/320x200?text=Car+Accessories" alt="" width="320" height="200">
+          <h3>Car Accessories</h3>
+          <a class="btn" href="index.html#featured-products" data-category="car">Shop Now</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========== FEATURED PRODUCTS: demo grid from all categories ========== -->
+    <section class="featured-products" id="featured-products" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Products</h2>
+      <p class="section-note">Prices and items below are sample demo data for layout only. Demo stock is not real inventory.</p>
+
+      <!-- Filter / sort controls used by script.js -->
+      <div class="product-toolbar" id="product-toolbar">
+        <div class="toolbar-group">
+          <label for="category-filter">Category</label>
+          <select id="category-filter" name="category">
+            <option value="all">All Products</option>
+            <option value="mobile">Mobile Accessories</option>
+            <option value="home-kitchen">Home and Kitchen</option>
+            <option value="fashion">Fashion Accessories</option>
+            <option value="sarees">Sarees and Clothing</option>
+            <option value="car">Car Accessories</option>
+          </select>
+        </div>
+        <div class="toolbar-group">
+          <label for="sort-products">Sort by</label>
+          <select id="sort-products" name="sort">
+            <option value="default">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+          </select>
+        </div>
+        <button type="button" class="btn" id="clear-search-btn" hidden>Clear search</button>
+      </div>
+
+      <p class="product-status" id="product-status" role="status" aria-live="polite"></p>
+
+      <!-- Products are rendered here by script.js -->
+      <div class="product-grid" id="featured-product-grid"></div>
+    </section>
+
+    <!-- ========== NEW ARRIVALS ========== -->
+    <section class="new-arrivals" id="new-arrivals" aria-labelledby="new-arrivals-heading">
+      <h2 id="new-arrivals-heading">New Arrivals</h2>
+      <p class="section-note">Recently added demo products.</p>
+      <div class="product-grid product-grid--compact" id="new-arrivals-grid"></div>
+    </section>
+
+    <!-- ========== SPECIAL OFFERS: promotional banner ========== -->
+    <section class="special-offers" id="special-offers" aria-labelledby="offers-heading">
+      <h2 id="offers-heading">Special Offers</h2>
+      <aside class="offer-banner" role="note">
+        <h3>Demo Weekend Sale</h3>
+        <p>Save up to 20% on selected demo items. Offer text is for front-end layout only — not a live promotion.</p>
+        <a class="btn btn-primary" href="#featured-products">Browse Deals</a>
+      </aside>
+    </section>
+
+    <!-- ========== WISHLIST: favourites list (populated by script.js) ========== -->
+    <section class="wishlist-section" id="wishlist-section" aria-labelledby="wishlist-heading">
+      <h2 id="wishlist-heading">My Wishlist</h2>
+      <p class="section-note">Saved items appear here when you use “Add to Wishlist” (demo behavior in script.js).</p>
+
+      <div class="wishlist-empty" id="wishlist-empty">
+        <p>Your wishlist is empty.</p>
+      </div>
+
+      <ul class="wishlist-list" id="wishlist-list" hidden>
+        <!-- JavaScript can append wishlist items using the same structure as product cards -->
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <section aria-labelledby="footer-about">
+        <h2 id="footer-about">About ShopNest</h2>
+        <p>ShopNest is a demo e-commerce front end for learning HTML structure. Product listings and policies are placeholders.</p>
+      </section>
+
+      <section aria-labelledby="footer-contact">
+        <h2 id="footer-contact">Contact</h2>
+        <p>Email: support@example.demo</p>
+        <p>Phone: +91 00000 00000 (placeholder)</p>
+      </section>
+
+      <section aria-labelledby="footer-support">
+        <h2 id="footer-support">Customer Support</h2>
+        <p>Help centre hours: Mon–Sat, 9:00–18:00 (demo).</p>
+      </section>
+
+      <nav aria-labelledby="footer-policies">
+        <h2 id="footer-policies">Policies</h2>
+        <ul>
+          <li><a href="#shipping-policy">Shipping Policy</a></li>
+          <li><a href="#return-policy">Return Policy</a></li>
+          <li><a href="#privacy-policy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms and Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="copyright">
+      <small>&copy; <span id="footer-year">2026</span> ShopNest. Demo site for educational use.</small>
+    </p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

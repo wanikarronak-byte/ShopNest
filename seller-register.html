@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Seller — ShopNest</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand-name">ShopNest</span></a>
+      <nav class="main-nav"><ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="seller.html">Seller panel</a></li>
+      </ul></nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="auth-page">
+      <h1>Seller registration</h1>
+      <p class="section-note">
+        Log in as a customer first, then submit shop details. An admin must approve before you can list products.
+      </p>
+      <p class="form-errors" id="sr-errors" role="alert" hidden></p>
+      <p class="form-success" id="sr-success" role="status" hidden></p>
+
+      <form id="seller-register-form" class="auth-form">
+        <p><label for="sr-shop">Shop name</label><input id="sr-shop" required></p>
+        <p><label for="sr-phone">Phone</label><input id="sr-phone" type="tel" required></p>
+        <p><label for="sr-address">Business address</label><textarea id="sr-address" rows="3" required></textarea></p>
+        <button type="submit" class="btn btn-primary">Submit for approval</button>
+      </form>
+      <p>Need an account? <a href="register.html">Register</a> · Already applied? <a href="seller.html">Seller login</a></p>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script>
+    document.getElementById("seller-register-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const err = document.getElementById("sr-errors");
+      const ok = document.getElementById("sr-success");
+      err.hidden = true;
+      ok.hidden = true;
+      if (!ShopNestAPI.getToken()) {
+        err.hidden = false;
+        err.textContent = "Please log in first, then return to this page.";
+        return;
+      }
+      try {
+        const data = await ShopNestAPI.request("/api/sellers/register", {
+          method: "POST",
+          body: JSON.stringify({
+            shopName: document.getElementById("sr-shop").value.trim(),
+            phone: document.getElementById("sr-phone").value.trim(),
+            address: document.getElementById("sr-address").value.trim(),
+          }),
+        });
+        if (data.token) ShopNestAPI.setSession(data.token, data.user);
+        ok.hidden = false;
+        ok.textContent = data.message || "Application submitted.";
+        setTimeout(() => { location.href = "seller.html"; }, 1200);
+      } catch (ex) {
+        err.hidden = false;
+        err.textContent = ex.message;
+      }
+    });
+  </script>
+</body>
+</html>

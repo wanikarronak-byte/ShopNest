@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product details — ShopNest demo store.">
+  <title>Product Details — ShopNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ShopNest home">
+        <img class="brand-logo" src="https://placehold.co/48x48?text=SN" alt="ShopNest logo" width="48" height="48">
+        <span class="brand-name">ShopNest</span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+        Open menu
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#categories">Categories</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-form" role="search" aria-label="Search products" action="index.html" method="get">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input type="search" id="site-search" name="q" placeholder="Search products…">
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="header-actions">
+        <a class="btn btn-login" href="login.html">Login</a>
+        <a class="btn btn-wishlist" href="index.html#wishlist-section">Wishlist</a>
+        <a class="btn btn-cart" href="cart.html">
+          Cart
+          <span class="cart-count" id="cart-item-count" aria-live="polite">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Product details: default demo content; script.js can replace from ?id= query -->
+    <article class="product-details" id="product-details" aria-labelledby="product-title">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#featured-products">Products</a></li>
+          <li aria-current="page"><span id="breadcrumb-product-name">Product Details</span></li>
+        </ol>
+      </nav>
+
+      <div class="product-details-layout">
+        <figure class="product-details-image">
+          <img
+            id="product-image"
+            src="https://placehold.co/500x500?text=Product+Image"
+            alt="Demo product image"
+            width="500"
+            height="500">
+        </figure>
+
+        <div class="product-details-info">
+          <p class="product-category" id="product-category">Category: Demo</p>
+          <h1 id="product-title">Demo Product Name</h1>
+          <p class="product-sku">SKU: <span id="product-id-display">demo-001</span></p>
+
+          <p class="product-price-block">
+            <span class="price" id="product-price">₹299</span>
+            <span class="discount-label" id="product-discount" hidden>10% off</span>
+            <s class="was-price" id="product-was-price" hidden>₹349</s>
+          </p>
+
+          <p id="product-description">
+            This is placeholder description text. JavaScript can load details based on the product id in the URL
+            (for example, <code>product.html?id=demo-001</code>).
+          </p>
+
+          <dl class="product-meta">
+            <div>
+              <dt>Availability</dt>
+              <dd id="product-availability">In stock (demo)</dd>
+            </div>
+            <div>
+              <dt>Delivery</dt>
+              <dd>Standard demo shipping</dd>
+            </div>
+          </dl>
+
+          <div class="product-details-actions">
+            <label for="product-quantity">Quantity</label>
+            <input type="number" id="product-quantity" name="quantity" min="1" value="1">
+            <button type="button" class="btn btn-primary add-to-cart" id="product-add-to-cart" data-product-id="demo-001">
+              Add to Cart
+            </button>
+            <button type="button" class="btn add-to-wishlist" id="product-add-to-wishlist" data-product-id="demo-001">
+              Add to Wishlist
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden template fields for script population -->
+      <template id="product-data-template">
+        <!-- script.js can read JSON or a catalog object and fill #product-details -->
+      </template>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <section aria-labelledby="footer-about">
+        <h2 id="footer-about">About ShopNest</h2>
+        <p>Demo product page for HTML and JavaScript practice.</p>
+      </section>
+      <section aria-labelledby="footer-contact">
+        <h2 id="footer-contact">Contact</h2>
+        <p>Email: support@example.demo</p>
+      </section>
+    </div>
+    <p class="copyright"><small>&copy; 2026 ShopNest. Demo site.</small></p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

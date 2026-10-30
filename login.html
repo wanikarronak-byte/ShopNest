@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login — ShopNest demo store.">
+  <title>Login — ShopNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ShopNest home">
+        <img class="brand-logo" src="https://placehold.co/48x48?text=SN" alt="ShopNest logo" width="48" height="48">
+        <span class="brand-name">ShopNest</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="register.html">Create account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="auth-page" aria-labelledby="login-heading">
+      <h1 id="login-heading">Login</h1>
+      <p class="section-note">
+        This login form is for front-end demonstration only. There is no secure authentication without a backend server.
+      </p>
+
+      <p class="form-errors" id="login-errors" role="alert" hidden></p>
+      <p class="form-success" id="login-success" role="status" hidden></p>
+
+      <form class="auth-form" id="login-form" action="index.html" method="get" novalidate>
+
+        <p>
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="email" required autocomplete="email">
+        </p>
+
+        <p>
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" required autocomplete="current-password">
+        </p>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+
+      <p>
+        New to ShopNest?
+        <a href="register.html">Register an account</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="copyright"><small>&copy; 2026 ShopNest. Demo site.</small></p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

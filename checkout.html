@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout — ShopNest demo store.">
+  <title>Checkout — ShopNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ShopNest home">
+        <img class="brand-logo" src="https://placehold.co/48x48?text=SN" alt="ShopNest logo" width="48" height="48">
+        <span class="brand-name">ShopNest</span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="cart.html">Back to Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="checkout-page" aria-labelledby="checkout-heading">
+      <h1 id="checkout-heading">Checkout</h1>
+      <p class="section-note">
+        Front-end demo only. Submitting this form does not process real payments or store personal data securely.
+      </p>
+
+      <p class="form-errors" id="checkout-errors" role="alert" hidden></p>
+
+      <div class="checkout-layout">
+
+        <!-- Delivery details -->
+        <form class="checkout-form" id="checkout-form" action="orders.html" method="get" novalidate>
+
+          <fieldset>
+            <legend>Delivery details</legend>
+
+            <p>
+              <label for="customer-name">Customer name</label>
+              <input type="text" id="customer-name" name="customer_name" required autocomplete="name">
+            </p>
+
+            <p>
+              <label for="mobile-number">Mobile number</label>
+              <input type="tel" id="mobile-number" name="mobile" required autocomplete="tel" inputmode="tel">
+            </p>
+
+            <p>
+              <label for="address">House or street address</label>
+              <textarea id="address" name="address" rows="3" required autocomplete="street-address"></textarea>
+            </p>
+
+            <p>
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" required autocomplete="address-level2">
+            </p>
+
+            <p>
+              <label for="state">State</label>
+              <input type="text" id="state" name="state" required autocomplete="address-level1">
+            </p>
+
+            <p>
+              <label for="postal-code">Postal code</label>
+              <input type="text" id="postal-code" name="postal_code" required autocomplete="postal-code" inputmode="numeric">
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Payment</legend>
+            <p>
+              <input type="radio" id="payment-cod" name="payment_method" value="cod" checked>
+              <label for="payment-cod">Cash on Delivery (demo)</label>
+            </p>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary" id="place-order-btn">Place Order</button>
+        </form>
+
+        <!-- Order summary sidebar -->
+        <aside class="checkout-summary" aria-labelledby="checkout-summary-heading">
+          <h2 id="checkout-summary-heading">Order Summary</h2>
+
+          <ul class="checkout-items" id="checkout-items"></ul>
+
+          <dl class="summary-list">
+            <div>
+              <dt>Subtotal</dt>
+              <dd id="checkout-subtotal">₹0</dd>
+            </div>
+            <div>
+              <dt>Delivery</dt>
+              <dd id="checkout-delivery">₹0</dd>
+            </div>
+            <div class="summary-total">
+              <dt>Total amount</dt>
+              <dd id="checkout-total">₹0</dd>
+            </div>
+          </dl>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="copyright"><small>&copy; 2026 ShopNest. Demo site.</small></p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

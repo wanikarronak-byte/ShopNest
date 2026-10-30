@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Order confirmation — ShopNest demo store.">
+  <title>Order Confirmation — ShopNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="ShopNest home">
+        <img class="brand-logo" src="https://placehold.co/48x48?text=SN" alt="ShopNest logo" width="48" height="48">
+        <span class="brand-name">ShopNest</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#featured-products">Shop again</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Order confirmation: script.js can inject order id from checkout -->
+    <section class="order-confirmation" id="order-confirmation" aria-labelledby="confirmation-heading">
+
+      <h1 id="confirmation-heading">Thank you — order received (demo)</h1>
+      <p class="confirmation-message" id="confirmation-message">
+        Your demo order has been placed. This page shows sample confirmation details for layout practice.
+      </p>
+
+      <dl class="order-meta">
+        <div>
+          <dt>Order ID</dt>
+          <dd id="order-id">SN-DEMO-20261023-001</dd>
+        </div>
+        <div>
+          <dt>Order status</dt>
+          <dd id="order-status">Confirmed (demo)</dd>
+        </div>
+        <div>
+          <dt>Payment method</dt>
+          <dd id="order-payment">Cash on Delivery</dd>
+        </div>
+        <div>
+          <dt>Total amount</dt>
+          <dd id="order-total">₹1,247</dd>
+        </div>
+      </dl>
+
+      <h2 id="ordered-products-heading">Ordered products</h2>
+      <ul class="order-items" id="order-items"></ul>
+
+      <a class="btn btn-primary" href="index.html">Return to Home</a>
+
+    </section>
+
+    <!-- Demo order history (localStorage only) -->
+    <section class="order-history" id="order-history" aria-labelledby="order-history-heading">
+      <h2 id="order-history-heading">Demo order history</h2>
+      <p class="section-note">These are locally stored demo orders. No real payment was collected.</p>
+      <div id="order-history-list"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="copyright"><small>&copy; 2026 ShopNest. Demo site.</small></p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
